@@ -1,13 +1,18 @@
 server:
-  port: 7788
+  port: 7789
 
 spring:
   cloud:
     nacos:
       config:
         server-addr: nacos.sunnly.wang:8848
-        active-profiles: nacos-demo
-        file-extension: yml
+#        file-extension: yml
+#        name: ${spring.application.name}
+#        active-profiles: ${spring.profiles.active}
+        ext-config[0]:
+          data-id: sunnly-oauth-${spring.profiles.active}.yml
+        ext-config[1]:
+          data-id: sunnly-redis-${spring.profiles.active}.yml
       discovery:
         server-addr: nacos.sunnly.wang:8848
   application:

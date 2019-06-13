@@ -8,7 +8,7 @@ import java.util.Objects;
  * @ClassName JWTInfo
  * @Date 2019/6/12 0012 22:11
  **/
-public class JWTInfo implements IJWTInfo, Serializable {
+public class JWTInfo implements wang.sunnly.microservice.nacos.security.core.utils.jwt.IJWTInfo, Serializable {
 
     private String username;
     private String userId;

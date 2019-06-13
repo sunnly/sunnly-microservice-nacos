@@ -36,7 +36,18 @@
                 </exclusion>
             </exclusions>
         </dependency>
-        
+
+        <!--引入redis，存储pubKey和priKey-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+
         <dependency>
             <groupId>wang.sunnly.microservice</groupId>
             <artifactId>sunnly-microservice-nacos-security-core</artifactId>

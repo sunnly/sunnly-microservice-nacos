@@ -5,6 +5,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 import wang.sunnly.microservice.nacos.security.core.annotation.IgnoreServiceToken;
+import wang.sunnly.microservice.nacos.security.core.constants.SecurityExceptionConstants;
+import wang.sunnly.microservice.nacos.security.core.exception.SecurityTokenException;
 import wang.sunnly.microservice.nacos.security.core.properties.SecurityProperties;
 
 import javax.servlet.http.Cookie;
@@ -36,12 +38,10 @@ public class ServiceAuthInterceptor extends HandlerInterceptorAdapter {
             return super.preHandle(request, response, handler);
         }
         //未配置忽略注解，判断是否在配置中进行
-        //TODO 暂时实现jwt模式，后期考虑继承client_token模式
         //获取header中的token,key值从配置文件sunnly.security.auth.client.token-header中获取
         String tokenKey = securityProperties.getAuth().getClient().getTokenHeader();
         if (StringUtils.isEmpty(tokenKey)){
-            //TODO 需要一个自定义异常类
-            throw new RuntimeException("未配置sunnly.security.auth.client.token-header");
+            throw new SecurityTokenException(SecurityExceptionConstants.TOKEN_HEADER_NOT_CONFIG);
         }
         //获取请求头中的token
         String headerToken = request.getHeader(tokenKey);
@@ -57,10 +57,10 @@ public class ServiceAuthInterceptor extends HandlerInterceptorAdapter {
             }
         }
         if(StringUtils.isEmpty(headerToken)){
-            //TODO 需要一个自定义异常类
-            throw new RuntimeException("未携带token");
+            throw new SecurityTokenException(SecurityExceptionConstants.TOKEN_NOT_NULL);
         }
-        //解析请求头中的token，此处为jwt，故可以解析出用户信息
+        //解析请求头中的token，服务端token需要通过公钥解析
+
 
         return super.preHandle(request, response, handler);
     }

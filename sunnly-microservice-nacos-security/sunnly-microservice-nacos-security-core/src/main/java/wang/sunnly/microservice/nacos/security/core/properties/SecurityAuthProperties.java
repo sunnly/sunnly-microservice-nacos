@@ -9,8 +9,8 @@ public class SecurityAuthProperties {
 
     //鉴权服务端ID
     private String serviceId = "sunnly_auth";
-    private SecurityUserProperties user = new SecurityUserProperties();
-    private SecurityClientProperties client = new SecurityClientProperties();
+    private wang.sunnly.microservice.nacos.security.core.properties.SecurityUserProperties user = new wang.sunnly.microservice.nacos.security.core.properties.SecurityUserProperties();
+    private wang.sunnly.microservice.nacos.security.core.properties.SecurityClientProperties client = new wang.sunnly.microservice.nacos.security.core.properties.SecurityClientProperties();
 
     public String getServiceId() {
         return serviceId;
@@ -20,19 +20,19 @@ public class SecurityAuthProperties {
         this.serviceId = serviceId;
     }
 
-    public SecurityUserProperties getUser() {
+    public wang.sunnly.microservice.nacos.security.core.properties.SecurityUserProperties getUser() {
         return user;
     }
 
-    public void setUser(SecurityUserProperties user) {
+    public void setUser(wang.sunnly.microservice.nacos.security.core.properties.SecurityUserProperties user) {
         this.user = user;
     }
 
-    public SecurityClientProperties getClient() {
+    public wang.sunnly.microservice.nacos.security.core.properties.SecurityClientProperties getClient() {
         return client;
     }
 
-    public void setClient(SecurityClientProperties client) {
+    public void setClient(wang.sunnly.microservice.nacos.security.core.properties.SecurityClientProperties client) {
         this.client = client;
     }
 }

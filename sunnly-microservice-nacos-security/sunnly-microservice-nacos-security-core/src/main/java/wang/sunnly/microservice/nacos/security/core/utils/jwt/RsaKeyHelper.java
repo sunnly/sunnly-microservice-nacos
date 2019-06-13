@@ -141,8 +141,8 @@ public class RsaKeyHelper {
         byte[] publicKeyBytes = keyPair.getPublic().getEncoded();
         byte[] privateKeyBytes = keyPair.getPrivate().getEncoded();
         Map<String, byte[]> map = new HashMap<String, byte[]>();
-        map.put("pub", publicKeyBytes);
-        map.put("pri", privateKeyBytes);
+        map.put("pubKey", publicKeyBytes);
+        map.put("priKey", privateKeyBytes);
         return map;
     }
 
@@ -152,14 +152,6 @@ public class RsaKeyHelper {
 
     public static final byte[] toBytes(String s) throws IOException {
         return (new BASE64Decoder()).decodeBuffer(s);
-    }
-
-    public static void main(String[] args) throws NoSuchAlgorithmException {
-        KeyPairGenerator keyPairGenerator = KeyPairGenerator.getInstance("RSA");
-        SecureRandom secureRandom = new SecureRandom("123".getBytes());
-        keyPairGenerator.initialize(1024, secureRandom);
-        KeyPair keyPair = keyPairGenerator.genKeyPair();
-        System.out.println(keyPair.getPublic().getEncoded());
     }
 
 }
