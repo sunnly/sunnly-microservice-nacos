@@ -13,15 +13,19 @@ public enum SecurityExceptionConstants {
 
     //服务鉴权异常
     //配置类5030X
-    TOKEN_HEADER_NOT_CONFIG("50001","未配置sunnly.security.auth.client.token-header"),
+    TOKEN_HEADER_NOT_CONFIG("50001","Please configure: sunnly.security.auth.client.token-header"),
     //Token不合法 5031X
-    TOKEN_NOT_NULL("50310","未携带token"),
+    TOKEN_EMPTY("50310","Client token is null or empty!"),
+    TOKEN_EXPIRED("50311","Client token expired!"),
+    TOKEN_SIGNATURE_ERROR("50312","Client token signature error!"),
+
+    CLIENT_OR_SECRENT_ERROR("50320","Client not found or Client secret is error!"),
 
     //用户鉴权异常
     //配置类5035X
     //Token不合法 5036X
 
-    OTHER_ERROR("50002","其他异常");
+    TOHER_ERROR("50002","其他异常");
 
     private String code;
     private String msg;

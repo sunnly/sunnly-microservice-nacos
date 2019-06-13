@@ -6,6 +6,7 @@ import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 import wang.sunnly.microservice.nacos.security.core.annotation.IgnoreServiceToken;
 import wang.sunnly.microservice.nacos.security.core.constants.SecurityExceptionConstants;
+import wang.sunnly.microservice.nacos.security.core.configuration.SecurityAuthServiceConfig;
 import wang.sunnly.microservice.nacos.security.core.exception.SecurityTokenException;
 import wang.sunnly.microservice.nacos.security.core.properties.SecurityProperties;
 
@@ -24,6 +25,9 @@ public class ServiceAuthInterceptor extends HandlerInterceptorAdapter {
 
     @Autowired
     private SecurityProperties securityProperties;
+
+    @Autowired
+    private SecurityAuthServiceConfig securityAuthServiceController;
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
@@ -57,9 +61,10 @@ public class ServiceAuthInterceptor extends HandlerInterceptorAdapter {
             }
         }
         if(StringUtils.isEmpty(headerToken)){
-            throw new SecurityTokenException(SecurityExceptionConstants.TOKEN_NOT_NULL);
+            throw new SecurityTokenException(SecurityExceptionConstants.TOKEN_EMPTY);
         }
-        //解析请求头中的token，服务端token需要通过公钥解析
+        //解析请求头中的token，服务端token需要通过公钥解析，从鉴权服务器获取公钥
+
 
 
         return super.preHandle(request, response, handler);

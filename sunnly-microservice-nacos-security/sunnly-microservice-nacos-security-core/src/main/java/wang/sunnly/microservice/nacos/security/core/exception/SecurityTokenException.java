@@ -11,7 +11,7 @@ import wang.sunnly.microservice.nacos.security.core.constants.SecurityExceptionC
 public class SecurityTokenException extends RuntimeException {
 
 
-    public SecurityTokenException(SecurityExceptionConstants code){
-        super(code.getCode());
+    public SecurityTokenException(SecurityExceptionConstants ex){
+        super(ex.getCode());
     }
 }
