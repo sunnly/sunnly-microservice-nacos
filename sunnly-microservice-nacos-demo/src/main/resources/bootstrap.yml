@@ -1,0 +1,34 @@
+server:
+  port: 9968
+
+spring:
+  cloud:
+    nacos:
+      config:
+        server-addr: nacos.sunnly.wang:8848
+        active-profiles: nacos-demo
+        file-extension: yml
+      discovery:
+        server-addr: nacos.sunnly.wang:8848
+  application:
+    name: nacos-demo
+  profiles:
+    active: dev
+
+sunnly:
+  validate:
+    code:
+      image:
+        key: IMAGE_VALIDATE_CODE
+        width: 60
+        height: 30
+        length: 4
+        expire: 3600
+      sms:
+        key: SMS_VALIDATE_CODE
+        length: 6
+        expire: 3600
+      mail:
+        key: MAIL_VALIDATE_CODE
+        length: 6
+        expire: 3600

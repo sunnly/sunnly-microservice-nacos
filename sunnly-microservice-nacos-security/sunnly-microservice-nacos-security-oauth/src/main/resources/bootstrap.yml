@@ -1,0 +1,16 @@
+server:
+  port: 7788
+
+spring:
+  cloud:
+    nacos:
+      config:
+        server-addr: nacos.sunnly.wang:8848
+        active-profiles: nacos-demo
+        file-extension: yml
+      discovery:
+        server-addr: nacos.sunnly.wang:8848
+  application:
+    name: sunnly-oauth
+  profiles:
+    active: dev

@@ -1,0 +1,15 @@
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    nacos:
+      config:
+        server-addr: nacos.sunnly.wang:8848
+        active-profiles: admin-consumer
+        file-extension: yml
+      discovery:
+        server-addr: nacos.sunnly.wang:8848
+  application:
+    name: admin-consumer
+  profiles:
+    active: dev

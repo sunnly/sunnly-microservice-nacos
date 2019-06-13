@@ -1,0 +1,17 @@
+sunnly:
+  validate:
+    code:
+      image:
+        key: IMAGE_VALIDATE_CODE
+        width: 67
+        height: 33
+        length: 4
+        expire: 3600
+      sms:
+        key: SMS_VALIDATE_CODE
+        length: 6
+        expire: 3600
+      mail:
+        key: MAIL_VALIDATE_CODE
+        length: 6
+        expire: 3600
