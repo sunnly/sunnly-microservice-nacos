@@ -56,11 +56,12 @@ public class TbUserController extends BaseController<TbUserService, TbUser> {
     @GetMapping("/page")
 //    @JsonView(TbUser.TbUserDetailView.class)
     @ApiOperation(value = "分页查询记录数（基类）", notes = "根据页数和条数查询记录")
-    public ListRestResponse<TbUser> getUserPage(@Valid
+    public ListRestResponse<TbUser> getUserPage(
+            @Valid
             @ApiParam(name = "pageSize", value = "每页多少条", defaultValue = "10", required = false)
             @RequestParam(value = "pageSize", defaultValue = "10") int pageSize,
-                                                @ApiParam(name = "pageNo", value = "第几页", defaultValue = "1", required = false)
-            @RequestParam(value = "pageNo", defaultValue = "1")  int pageNo, BindingResult errors){
+            @ApiParam(name = "pageNo", value = "第几页", defaultValue = "1", required = false)
+            @RequestParam(value = "pageNo", defaultValue = "1")  int pageNo/*, BindingResult errors*/){
         ListRestResponse<TbUser> listRestResponse = new ListRestResponse<>();
         List list = service.selectListByPage(pageNo,pageSize);
         listRestResponse.setCount(service.selectCount());

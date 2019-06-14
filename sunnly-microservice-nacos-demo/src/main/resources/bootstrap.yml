@@ -32,3 +32,5 @@ sunnly:
         key: MAIL_VALIDATE_CODE
         length: 6
         expire: 3600
+
+

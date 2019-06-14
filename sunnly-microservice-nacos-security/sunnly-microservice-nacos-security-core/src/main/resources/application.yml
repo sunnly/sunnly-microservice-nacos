@@ -2,12 +2,12 @@ sunnly:
     security:
       auth:
 #       鉴权服务器ID（用了查找鉴权服务器）
-        service-id: sunnly_auth
+        service-id: sunnly-oauth
 #       服务鉴权
         client:
-          id: id
+          id: ace-gate
           token-header: header
-          secret: client
+          secret: 123456
 #          服务鉴权种子（只配置在鉴权服务器）
           rsa-secret: xx1WET12^%3^(WE45
 #       用户鉴权

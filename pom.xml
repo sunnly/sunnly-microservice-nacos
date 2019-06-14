@@ -19,10 +19,11 @@
     <modules>
         <module>sunnly-microservice-nacos-dependencies</module>
         <module>sunnly-microservice-nacos-admin</module>
+        <module>sunnly-microservice-nacos-common-core</module>
         <module>sunnly-microservice-nacos-common-services</module>
         <module>sunnly-microservice-nacos-gateway</module>
         <module>sunnly-microservice-nacos-validate</module>
-        <module>sunnly-microservice-nacos-demo</module>
+        <!--<module>sunnly-microservice-nacos-demo</module>-->
         <module>sunnly-microservice-nacos-security</module>
     </modules>
 

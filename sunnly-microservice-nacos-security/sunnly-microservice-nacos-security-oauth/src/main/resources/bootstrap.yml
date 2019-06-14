@@ -9,32 +9,16 @@ spring:
         file-extension: yml
         name: ${spring.application.name}
         active-profiles: ${spring.profiles.active}
-#        ext-config[0]:
-#          data-id: sunnly-oauth-${spring.profiles.active}.yml
         ext-config[0]:
           data-id: sunnly-redis-${spring.profiles.active}.yml
+        ext-config[1]:
+          data-id: sunnly-mysql-agAuthV1-${spring.profiles.active}.yml
       discovery:
         server-addr: nacos.sunnly.wang:8848
   application:
     name: sunnly-oauth
   profiles:
     active: dev
-
-  datasource:
-    type: com.zaxxer.hikari.HikariDataSource
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/ag_auth_v1?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=GMT%2B8
-    username: root
-    password: sunnly
-    hikari:
-      minimum-idle: 5
-      idle-timeout: 600000
-      maximum-pool-size: 10
-      auto-commit: true
-      pool-name: MyHikariCP
-      max-lifetime: 1800000
-      connection-timeout: 30000
-      connection-test-query: SELECT 1
 
 sunnly:
   security:

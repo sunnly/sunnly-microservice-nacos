@@ -31,8 +31,8 @@
         <spring-boot-mapper.version>2.1.5</spring-boot-mapper.version>
         <spring-boot.version>1.5.9.RELEASE</spring-boot.version>
         <spring-boot-pagehelp.version>1.2.3</spring-boot-pagehelp.version>
-
-        <springfox-swagger2.version>2.7.0</springfox-swagger2.version>
+        <!--2.7.0-->
+        <springfox-swagger2.version>2.6.1</springfox-swagger2.version>
         <io-swagger-annotations.version>1.5.13</io-swagger-annotations.version>
         <!--数据库-->
         <mysql.version>8.0.15</mysql.version>
@@ -43,6 +43,9 @@
 
         <!--工具类-->
         <lombok.version>1.18.6</lombok.version>
+
+        <io-jsonwebtoken-jwt.version>0.7.0</io-jsonwebtoken-jwt.version>
+        <joda-time.version>2.9.5</joda-time.version>
 
 
         <org-springframework-social.version>1.1.6.RELEASE</org-springframework-social.version>
@@ -181,6 +184,18 @@
                 <groupId>io.swagger</groupId>
                 <artifactId>swagger-annotations</artifactId>
                 <version>${io-swagger-annotations.version}</version>
+            </dependency>
+
+            <!--JWT-->
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt</artifactId>
+                <version>${io-jsonwebtoken-jwt.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>joda-time</groupId>
+                <artifactId>joda-time</artifactId>
+                <version>${joda-time.version}</version>
             </dependency>
 
             <dependency>

@@ -1,7 +1,6 @@
 package wang.sunnly.microservice.nacos.security.core.constants;
 
 import org.apache.commons.lang3.StringUtils;
-import wang.sunnly.microservice.nacos.security.core.exception.SecurityTokenException;
 
 /**
  * @author Sunnly
@@ -14,13 +13,14 @@ public enum SecurityExceptionConstants {
     //服务鉴权异常
     //配置类5030X
     TOKEN_HEADER_NOT_CONFIG("50001","Please configure: sunnly.security.auth.client.token-header"),
-    //Token不合法 5031X
+    //Token验证失败 5031X
     TOKEN_EMPTY("50310","Client token is null or empty!"),
     TOKEN_EXPIRED("50311","Client token expired!"),
     TOKEN_SIGNATURE_ERROR("50312","Client token signature error!"),
 
     CLIENT_OR_SECRENT_ERROR("50320","Client not found or Client secret is error!"),
 
+    NETWORK_CONNECTION_ERR("50330","网络连接错误"),
     //用户鉴权异常
     //配置类5035X
     //Token不合法 5036X

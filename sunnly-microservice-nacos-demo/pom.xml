@@ -5,29 +5,23 @@
 
     <parent>
         <groupId>wang.sunnly.microservice</groupId>
-        <artifactId>sunnly-microservice-nacos-admin</artifactId>
+        <artifactId>sunnly-microservice-nacos</artifactId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
     <groupId>wang.sunnly.microservice</groupId>
     <artifactId>sunnly-microservice-nacos-demo</artifactId>
 
-
     <dependencies>
-
-        <!--<dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>-->
         <dependency>
+            <groupId>wang.sunnly.microservice</groupId>
+            <artifactId>sunnly-microservice-nacos-common-core</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+        <!--<dependency>
             <groupId>wang.sunnly.microservice</groupId>
             <artifactId>sunnly-microservice-nacos-validate</artifactId>
             <version>${project.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>wang.sunnly.microservice</groupId>
-            <artifactId>sunnly-microservice-nacos-security</artifactId>
-            <version>${project.version}</version>
-        </dependency>
+        </dependency>-->
     </dependencies>
 
     <build>
